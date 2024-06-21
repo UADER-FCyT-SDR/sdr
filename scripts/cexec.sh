@@ -22,8 +22,8 @@ PWD=$(dirname $0)
 export DISPLAY=:0.0
 
 SELECT=$CLUSTERID
-INCLUDE="192.168.0."
-EXCLUDE=$CLUSTERID"00"
+INCLUDE=$CLUSTERIP
+EXCLUDE=$CLUSTERID"0"
 
 #*--- Execution environment
 
@@ -37,7 +37,7 @@ ME=$(echo $SCRIPT_NAME | cut -f 1 -d ".")
 HOSTS="/etc/hosts"
 
 ARGS=$#
-NODE=$(cat $HOSTS | grep $SELECT | grep $INCLUDE | grep -v $EXCLUDE | awk '{ print $2 ; }' | cut -f1 -d"%")
+NODE=$(cat $HOSTS | grep $SELECT | grep $INCLUDE | grep -v $EXCLUDE | awk '{ print $2 ; }' | cut -f1 -d'%')
 CMD=$1
 
 case $1 in
@@ -55,9 +55,7 @@ for i in $(echo $NODE)
     if [ $P -ge 1 ]
     then
        RCALL="ssh pi@$i $CMD"
-       #echo "call($RCALL)"
        RESULT=$($RCALL)
-       #echo "$RESULT"
        echo "nodo($i) ip[$IP]: Ok result[$RESULT]]"
     else
        echo "nodo($i) ip[$IP]: no disponible"

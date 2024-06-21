@@ -21,13 +21,11 @@ PWD=$(dirname $0)
 
 export DISPLAY=:0.0
 
-SELECT="$CLUSTERID"
-INCLUDE="$CLUSTERIP"
-EXCLUDE=$CLUSTERID"00"
+SELECT=$CLUSTERID
+INCLUDE=$CLUSTERIP
+EXCLUDE=$CLUSTERID"0"
 
-echo "SELECT=$SELECT INCLUDE=$INCLUDE EXCLUDE=$EXCLUDE"
-#
-*--- Execution environment
+#*--- Execution environment
 
 SCRIPT_PATH=$(dirname "$0")
 if [ "$SCRIPT_PATH" = "." ]; then
@@ -40,7 +38,6 @@ HOSTS="/etc/hosts"
 
 ARGS=$#
 NODE=$(cat $HOSTS | grep $SELECT | grep $INCLUDE | grep -v $EXCLUDE | awk '{ print $2 ; }' | cut -f1 -d"%")
-echo "Nodo es $NODE"
 
 FROMF=$1
 TOF=$2
@@ -54,7 +51,6 @@ case $1 in
       ;;
 esac
 
-echo "Copying file($FROMF) to ($TOF) at nodes($NODE)"
 for i in $(echo $NODE)
  do
 
@@ -63,7 +59,9 @@ for i in $(echo $NODE)
     P=$(ping $i -c 1 | grep 'time=' | grep -v 'No route to host' | wc -l)
     if [ $P -ge 1 ]
     then
-       echo "nodo($i) ip[$IP]: copied($(scp $FROMF pi@$i:$TOF))" 
+       CMD="scp $FROMF pi@$i:$TOF"
+       RESULT="$($CMD)"
+       echo "nodo($i) ip[$IP]: Ok result($RESULT)" 
     else
        echo "nodo($i) ip[$IP]: no disponible"
     fi
