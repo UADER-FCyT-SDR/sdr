@@ -11,7 +11,7 @@
 
 TIMEOUT="900s"
 SLEEP="10"
-CLUSTER="/clusterfs/sdr/scripts/"
+CLUSTER=$CLUSTERFS"/sdr/scripts"
 
 clear
 while true; 

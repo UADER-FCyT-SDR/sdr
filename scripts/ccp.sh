@@ -21,11 +21,13 @@ PWD=$(dirname $0)
 
 export DISPLAY=:0.0
 
-SELECT="sdr-s0"
-INCLUDE="10.0.0."
-EXCLUDE="sdr-s00"
+SELECT="$CLUSTERID"
+INCLUDE="$CLUSTERIP"
+EXCLUDE=$CLUSTERID"00"
 
-#*--- Execution environment
+echo "SELECT=$SELECT INCLUDE=$INCLUDE EXCLUDE=$EXCLUDE"
+#
+*--- Execution environment
 
 SCRIPT_PATH=$(dirname "$0")
 if [ "$SCRIPT_PATH" = "." ]; then
@@ -38,8 +40,11 @@ HOSTS="/etc/hosts"
 
 ARGS=$#
 NODE=$(cat $HOSTS | grep $SELECT | grep $INCLUDE | grep -v $EXCLUDE | awk '{ print $2 ; }' | cut -f1 -d"%")
+echo "Nodo es $NODE"
+
 FROMF=$1
 TOF=$2
+
 
 case $1 in
     -n|-N)
@@ -58,9 +63,7 @@ for i in $(echo $NODE)
     P=$(ping $i -c 1 | grep 'time=' | grep -v 'No route to host' | wc -l)
     if [ $P -ge 1 ]
     then
-       RCALL="scp $FROMF pi@$i:$TOF"
-       RESULT=$($RCALL)
-       echo "nodo($i) ip[$IP]: Ok resultado[$RESULT]" 
+       echo "nodo($i) ip[$IP]: copied($(scp $FROMF pi@$i:$TOF))" 
     else
        echo "nodo($i) ip[$IP]: no disponible"
     fi

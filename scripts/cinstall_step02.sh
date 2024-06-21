@@ -1,8 +1,8 @@
 #!/bin/sh
 
 CLUSTERFS="/clusterfs"
-SCRIPT=$CLUSTERFS/"scripts"
-MPI4PY=$CLUSTERFS/"mpi4py"
+SCRIPT=$CLUSTERFS"/sdr/scripts"
+PYTHON=$CLUSTERFS"/sdr/python"
 NODE="sdr-q01"
 
 #*---- Continuar con instalación del cluster utilizando recursos en /clusterfs

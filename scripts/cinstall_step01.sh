@@ -1,8 +1,8 @@
 #!/bin/sh
 
-CLUSTERFS="/clusterfs"
-SCRIPT=$CLUSTERFS/"scripts"
-MPI4PY=$CLUSTERFS/"mpi4py"
+
+SCRIPT=$CLUSTERFS/"sdr/scripts"
+PYTHON=$CLUSTERFS/"sdr/python"
 #*---- Continuar con instalación del cluster utilizando recursos en /clusterfs
 #*---- Instalar OpenMPI y ambientes relacionados
 
@@ -17,9 +17,8 @@ $SCRIPT/cexec.sh "sudo apt-get install mpi-default-dev   -y "
 $SCRIPT/cexec.sh "sudo apt-get install python3-mpi4py -y"
 
 #*--- Copiar recursos de soporte mpi4py
-cd $MPI4PY
+cd $PYTHON
 git clone https://github.com/akkornel/mpi4py.git
-cp ./mpi4py/*.py .
 
 #*---
 echo "***************************************"

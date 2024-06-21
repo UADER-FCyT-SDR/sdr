@@ -21,9 +21,9 @@ PWD=$(dirname $0)
 
 export DISPLAY=:0.0
 
-SELECT="sdr-s0"
-INCLUDE="10.0.0."
-EXCLUDE="sdr-s00"
+SELECT=$CLUSTERID
+INCLUDE="192.168.0."
+EXCLUDE=$CLUSTERID"00"
 
 #*--- Execution environment
 
