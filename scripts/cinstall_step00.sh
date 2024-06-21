@@ -2,7 +2,7 @@
 
 NODE="sdr-s04"
 
-SCRIPT="/clusterfs/sdr/scripts"
+SCRIPT="/clusterfs/scripts"
 cd $SCRIPT
 #*----  Copy latest version of critical files
 
@@ -14,7 +14,7 @@ $SCRIPT/cexec.sh -n $NODE "sudo mv /home/pi/resolv.conf /etc/resolv.conf"
 $SCRIPT/cexec.sh -n $NODE "ping -c1 www.hotmail.com"
 
 #*---- Install NTP service
-$SCRIPT/cexec.sh -n $NODE "sudo apt-get update && sudo apt-get install ntp ntpdate sysstat stress git -y"
+$SCRIPT/cexec.sh -n $NODE "sudo apt-get update && sudo apt-get install ntp ntpdate sysstat stress -y"
 
 #*---- Install other packages needed
 $SCRIPT/cexec.sh -n $NODE "sudo apt-get install nfs-common -y"

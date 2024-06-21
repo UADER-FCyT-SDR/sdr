@@ -1,8 +1,8 @@
 #!/bin/sh
 
-CLUSTERFS="/clusterfs/sdr"
+CLUSTERFS="/clusterfs"
 SCRIPT=$CLUSTERFS/"scripts"
-MPI4PY=$CLUSTERFS/"python"
+MPI4PY=$CLUSTERFS/"mpi4py"
 #*---- Continuar con instalación del cluster utilizando recursos en /clusterfs
 #*---- Instalar OpenMPI y ambientes relacionados
 
