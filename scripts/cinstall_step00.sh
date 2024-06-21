@@ -6,12 +6,17 @@
 #* /etc/profile
 #*
 #* CLUSTERFS="/clusterfs"
-#* CLUSTERIP="192.168.0."
-#* CLUSTERID="sdr-s"
+#* CLUSTERIP="10.0.0."
+#* CLUSTERID="sdr-s0"
 #*
 #*----------------------------------------------------------------------------
 
+#* VVVVVVVVVVV---- Configurar aqui el nombre dele nodo 
 NODE="sdr-s04"
+
+
+#*---- Comienza la ejecución
+
 SCRIPT=$CLUSTERFS"/sdr/scripts"
 cd $SCRIPT
 #*----  Copy latest version of critical files
