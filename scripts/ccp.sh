@@ -14,7 +14,6 @@
 #*
 #*          (la copia debe realizarse en un path para el cual el usuario pi tenga permiso)
 #*------------------------------------------------------------------------------------------------
-
 clear
 RR=$(pwd)
 PWD=$(dirname $0)
@@ -37,11 +36,11 @@ ME=$(echo $SCRIPT_NAME | cut -f 1 -d ".")
 HOSTS="/etc/hosts"
 
 ARGS=$#
-NODE=$(cat $HOSTS | grep $SELECT | grep $INCLUDE | grep -v $EXCLUDE | awk '{ print $2 ; }' | cut -f1 -d"%")
+
+NODE=$(cat $HOSTS | grep "$SELECT" | grep "$INCLUDE" | grep -v "$EXCLUDE" | awk '{ print $2 ; }' | cut -f1 -d'%')
 
 FROMF=$1
 TOF=$2
-
 
 case $1 in
     -n|-N)
