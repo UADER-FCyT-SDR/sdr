@@ -1,3 +1,4 @@
+# *Cluster UADER-FCyT Proyecto I+D Procesamiento SDR en cluster distribuido"
 # Instalar ZeroTier
 
 -   Bajar e instalar cliente ZeroTier desde el [sitio oficial ZeroTier](https://www.zerotier.com/download/)
@@ -241,7 +242,7 @@ sdr-s03 slots=4
 sdr-s04 slots=2
 ~~~
 
-Donde se puede regular el número de núcleos disponibles en cada nodo,
+Donde se puede regular el numero de nucleos disponibles en cada nodo,
 hay que tener en cuenta que en el nodo base (sdr-s00) siempre uno de los
 núcleos se designa como rank 0 (master). Es conveniente que las placas
 menos veloces tengan menor asignación por parte del scheduler.
