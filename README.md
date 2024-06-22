@@ -308,8 +308,6 @@ $CLUSTERFS/sdr/lib/collatz.sh* *\[-m MPI\|SERIAL\] \[-s Start\] \[-e End\] \[-b 
 
 El mismo script calcula con la versión paralelo (MPI) o serie (SERIAL).
 
-*\
-*
 
 # Benchmark de GNURadio
 
@@ -323,7 +321,7 @@ El mismo está formado por dos componentes llamados:
 
 En el gr companion se puede ver como
 
-![Imagen gr companion](image1.png){width="6.1375in" height="3.588888888888889in"}
+![Imagen gr companion](./image1.png){width="6.1375in" height="3.588888888888889in"}
 
 El directorio de los fuentes respectivos es
 ~~~
