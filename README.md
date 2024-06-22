@@ -31,15 +31,15 @@ Raspbian queda el grueso del trabajo.
 
 # Método para loggear en ssh sin password
 
-## 
 
 ## Generar las claves públicas y privadas de cada usuario
 
 -   En la máquina local de cada uno generar las credenciales con el
     comando
 
-> *ssh-keygen*
-
+~~~
+		ssh-keygen
+~~~
 -   Al hacerlo quedarán los archivo *id_rsa.pub* e *id_rsa* en el
     directorio *./ssh*
 
@@ -47,46 +47,60 @@ Raspbian queda el grueso del trabajo.
 
 -   En la máquina local ejecutar
 
-> *ssh-copy-id remote_username@remote_server_ip_address*
-
+~~~
+		ssh-copy-id remote_username@remote_server_ip_address
+~~~
 ## Entrar en la máquina remota
 
 -   En la máquina local ejecutar
 
-> *ssh remote_username@remote_server_ip_address*
+~~~
+		ssh remote_username@remote_server_ip_address
+~~~
 
 # Creación de nuevo usuario 
 
 ## Generar el usuario 
 
--   Seleccionar el usuario a generar, igual a usuario de correo
-    electrónico en UADER.
+-   Seleccionar el usuario a generar, igual a usuario de correo electronico en UADER.
 
--   Generar una nueva password arbitraria con *python pwdgen.py*
-
--   Tipear *sudo adduser \[usuario\]*
-
+-   Generar una nueva password arbitraria con
+~~~
+		python pwdgen.py
+~~~
+-   Tipear *
+~~~
+		sudo adduser \[usuario\]
+~~~
 -   Indicar password y confirmar.
 
 ## Agregar a grupo sudoers
 
--   *usermod -aG sudo \[usuario\]*
-
+~~~
+		usermod -aG sudo \[usuario\]
+~~~
 ## Para cambiar password
 
--   Generar una nueva password arbitraria con *python pwdgen.py*
+-   Generar una nueva password arbitraria con 
 
--   Tipear *sudo passwd \[usuario\]* , tipear a continuación la password
-    dos veces.
+~~~
+		python pwdgen.py
+~~~
+-   Tipear
+
+~~~
+		sudo passwd \[usuario\]
+~~~
+ tipear a continuacion la password  dos veces.
 
 # Login con pi en cluster base (sdr-s00) desde el exterior
 
 Se accede con
 
--   *ssh <pi@100.100.100.100>*
-
--   *password \[************] (sin los \[ \])*
-
+~~~
+		ssh <pi@100.100.100.100>
+		password \[************] (sin los \[ \])
+~~~
 Esta forma de acceso no es recomendada, utilizar en la medida de lo
 posible la que se explica a continuación.
 
@@ -98,37 +112,48 @@ instalaciones deben ser hechas con el usuario pi en el directorio
 
 Sin embargo, el método de login sin password lo hace con el usuario
 individual y el directorio de comienzo es en /home/\[usuario\], para
-corregirlo:
+corregirlo tipear:
 
--   Tipear *sudo su pi*
+~~~
+		sudo su pi
+		cd /home/pi*
+~~~
 
--   Tipear *cd /home/pi*
+Se puede verificar cual es el usuario de operacion con el comando
 
-Se puede verificar cual es el usuario de operación con el comando
-*whoami* y el directorio de operación con el comando *pwd.* Al finalizar
-se puede desconectar con *exit*
+~~~
+		whoami
+~~~
+ y el directorio de operación con el comando 
+~~~
+		pwd
+~~~
 
+Al finalizar se puede desconectar con 
+~~~
+		exit
+~~~
 # Utilidades de cluster
-
-## 
 
 ## Directorios exportados
 
 Los siguientes son variables exportadas
 
 -   CLUSTERFS (contenido "/clusterfs/sdr")
-
 -   CLUSTERIP (contenido "10.0.0.")
-
 -   CLUSTERID (contenido "sdr-s0")
 
+La variable *HOSTFILE* contendra el nombre completo al archivo con la
+definicion corriente del cluster.
+ 
 ## Script ccp.sh
 
 El script **ccp.sh** sirve para copiar un mismo archivo desde el nodo
 base del cluster a uno o todos los nodos del mismo.
 
-> *\$SCRIPTS/ccp.sh {-n nodo} {archivo_origen} {path}{archivo_destino}*
-
+~~~
+	$SCRIPTS/ccp.sh {-n nodo} {archivo_origen} {path}{archivo_destino}
+~~~
 El comando se ejecuta con autoridad de usuario pi por lo que el destino
 tiene que estar autorizado para realizar la operación de copia.
 
@@ -138,7 +163,9 @@ que se designe como destino.
 En caso de necesitar hacer copias individuales en sentido contrario
 puede utilizarse
 
-*scp pi@{nodo_origen}:/(path)/(archivo) archivo*
+~~~
+	scp pi@{nodo_origen}:/(path)/(archivo) archivo
+~~~
 
 ## Script cexec.sh
 
