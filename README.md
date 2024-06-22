@@ -323,6 +323,11 @@ En el gr companion se puede ver como
 
 ![Imagen gr companion](./image1.png)
 
+Este componente custom fue desarrollado usando el tutorial disponible para
+modulos OOT (Out of Tree) en [Python](https://wiki.gnuradio.org/index.php?title=Creating_Python_OOT_with_gr-modtool)
+y [C++](https://wiki.gnuradio.org/index.php?title=Creating_C%2B%2B_OOT_with_gr-modtool).
+
+
 El directorio de los fuentes respectivos es
 ~~~
 $CLUSTERFS/sdr/gnuradio/gr-customModule
