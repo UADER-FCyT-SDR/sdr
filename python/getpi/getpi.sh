@@ -6,6 +6,10 @@
 #  Proyecto de investigaci  n
 #  Procesamiento de se  ales mediante cluster
 #  Microcluster LAN
-#  Script para verificar los nodos utilizados por el cluster
+#  Script para correr benchmark de calculo de pi
 #*------------------------------------------------------------------------------------------------
-mpirun --hostfile $HOSTFILE --oversubscribe python ./mpi4.py
+
+SIZE=1000000
+TOTAL=10
+
+mpirun --oversubscribe --hostfile $HOSTFILE python getpi.py -s $SIZE -t $TOTAL 

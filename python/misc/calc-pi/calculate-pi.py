@@ -45,8 +45,6 @@ if myrank == 0:
     n.fill(_n)
     start = time.time()
 
-
-
 comm.Bcast([n, MPI.INT], root=0)
 _mypi = comp_pi(n, myrank, nprocs)
 mypi.fill(_mypi)

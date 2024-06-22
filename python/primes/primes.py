@@ -14,7 +14,7 @@
 
   To execute this code:
 
-  mpirun -np NUMBER_OF_PROCESSES --hostfile HOSTFILE python getpi.py [-l LOWER] [-u UPPER] [-v] 
+  mpirun -np NUMBER_OF_PROCESSES --hostfile HOSTFILE python primes.py [-l LOWER] [-u UPPER] [-s SLICE] [-v] 
 
 where....
 

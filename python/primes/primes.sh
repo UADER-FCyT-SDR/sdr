@@ -6,6 +6,10 @@
 #  Proyecto de investigaci  n
 #  Procesamiento de se  ales mediante cluster
 #  Microcluster LAN
-#  Script para verificar los nodos utilizados por el cluster
+#  Script para correr benchmark de calculo de numeros primos
 #*------------------------------------------------------------------------------------------------
-mpirun --hostfile $HOSTFILE --oversubscribe python ./mpi4.py
+
+LOWER=1
+UPPER=100000
+SLICE=10
+mpirun --oversubscribe --hostfile $HOSTFILE python primes.py -l $LOWER -u $UPPER -s $SLICE 

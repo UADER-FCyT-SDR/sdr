@@ -37,7 +37,7 @@ SCRIPT_NAME="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 ME=$(echo $SCRIPT_NAME | cut -f 1 -d ".")
 
 
-COLLATZ="/clusterfs/collatz"
+COLLATZ=$CLUSTERFS/"sdr/lib/collatz"
 cd $COLLATZ
 
 #*---------------------------------------------------------------------------------
@@ -49,7 +49,6 @@ END=100000
 BLOCKSIZE=1000
 NP=8
 MODE="MPI"
-HOSTFILE=$COLLATZ/"hostfile"
 
 while getopts 'n:f:m:s:e:b:vh' opt; do
   case "$opt" in
@@ -63,23 +62,23 @@ while getopts 'n:f:m:s:e:b:vh' opt; do
 
     e)
       END="$OPTARG"
-      ;;   
+      ;;
     n)
       NP="$OPTARG"
-      ;;   
+      ;;
     f)
       HOSTFILE="$OPTARG"
-      ;;   
+      ;;
     b)
       BLOCKSIZE="$OPTARG"
-      ;;   
+      ;;
   :)
       echo -e "option requires an argument, see -h for help"
       exit 1
       ;;
     v)
       VERBOSE=1
-      ;;   
+      ;;
 
     ?|h)
       echo "Usage: $($ME) [-m MPI|SERIAL] [-n nodes] [-f hostfile] [-s Start] [-e End] [-b Blocksize] [-v]"
@@ -115,6 +114,7 @@ if [ "$MODE" = "SERIAL" ]; then
     $COLLATZ/collatz_serial $START $END $BLOCKSIZE $VERBOSE
 else
     if [ "$MODE" = "MPI" ]; then 
+       mpicc -o $COLLATZ/collatz $COLLATZ/collatz.c
        mpirun  --hostfile $HOSTFILE -np $NP $COLLATZ/collatz $START $END $BLOCKSIZE $VERBOSE
     else
        echo "[$ME] Wrong execution mode, terminating!"

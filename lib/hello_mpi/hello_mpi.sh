@@ -8,4 +8,9 @@
 #  Microcluster LAN
 #  Script para verificar los nodos utilizados por el cluster
 #*------------------------------------------------------------------------------------------------
-mpirun --hostfile $HOSTFILE --oversubscribe python ./mpi4.py
+HELLO_MPI_PATH=$CLUSTERFS"/sdr/lib/hello_mpi"
+O="hello_mpi"
+CC=$O".c"
+
+mpicc -o $HELLO_MPI_PATH/$O $HELLO_MPI_PATH/$CC
+mpirun --hostfile $HOSTFILE --oversubscribe $HELLO_MPI_PATH/$O
