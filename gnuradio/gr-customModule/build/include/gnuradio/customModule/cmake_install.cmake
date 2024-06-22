@@ -43,6 +43,9 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gnuradio/customModule" TYPE FILE FILES "/clusterfs/sdr/gnuradio/gr-customModule/include/gnuradio/customModule/api.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gnuradio/customModule" TYPE FILE FILES
+    "/clusterfs/sdr/gnuradio/gr-customModule/include/gnuradio/customModule/api.h"
+    "/clusterfs/sdr/gnuradio/gr-customModule/include/gnuradio/customModule/multDivSelect.h"
+    )
 endif()
 

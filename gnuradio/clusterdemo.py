@@ -132,19 +132,19 @@ class clusterdemo(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.customModule_addSubSelect_0 = customModule.addSubSelect(True)
+        self.customModule_multDivSelect_0 = customModule.multDivSelect(False)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 100, 1, 0, 0)
-        self.analog_const_source_x_0 = analog.sig_source_c(0, analog.GR_CONST_WAVE, 0, 0, 1)
+        self.analog_const_source_x_0 = analog.sig_source_c(0, analog.GR_CONST_WAVE, 0, 0, 2)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_const_source_x_0, 0), (self.customModule_addSubSelect_0, 1))
-        self.connect((self.analog_sig_source_x_0, 0), (self.customModule_addSubSelect_0, 0))
+        self.connect((self.analog_const_source_x_0, 0), (self.customModule_multDivSelect_0, 1))
+        self.connect((self.analog_sig_source_x_0, 0), (self.customModule_multDivSelect_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.customModule_addSubSelect_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.customModule_multDivSelect_0, 0), (self.blocks_throttle_0, 0))
 
 
     def closeEvent(self, event):

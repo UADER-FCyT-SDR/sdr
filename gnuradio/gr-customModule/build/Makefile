@@ -97,7 +97,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"pythonapi\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -185,6 +185,19 @@ uninstall/fast:
 .PHONY : uninstall/fast
 
 #=============================================================================
+# Target rules for targets named gnuradio-customModule
+
+# Build rule for target.
+gnuradio-customModule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gnuradio-customModule
+.PHONY : gnuradio-customModule
+
+# fast build rule for target.
+gnuradio-customModule/fast:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-customModule.dir/build.make lib/CMakeFiles/gnuradio-customModule.dir/build
+.PHONY : gnuradio-customModule/fast
+
+#=============================================================================
 # Target rules for targets named pygen_apps_9a6dd283c3de653fbca500f9721f634f
 
 # Build rule for target.
@@ -223,6 +236,32 @@ copy_module_for_tests/fast:
 	$(MAKE) $(MAKESILENT) -f python/customModule/CMakeFiles/copy_module_for_tests.dir/build.make python/customModule/CMakeFiles/copy_module_for_tests.dir/build
 .PHONY : copy_module_for_tests/fast
 
+#=============================================================================
+# Target rules for targets named customModule_python
+
+# Build rule for target.
+customModule_python: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 customModule_python
+.PHONY : customModule_python
+
+# fast build rule for target.
+customModule_python/fast:
+	$(MAKE) $(MAKESILENT) -f python/customModule/bindings/CMakeFiles/customModule_python.dir/build.make python/customModule/bindings/CMakeFiles/customModule_python.dir/build
+.PHONY : customModule_python/fast
+
+#=============================================================================
+# Target rules for targets named customModule_docstrings
+
+# Build rule for target.
+customModule_docstrings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 customModule_docstrings
+.PHONY : customModule_docstrings
+
+# fast build rule for target.
+customModule_docstrings/fast:
+	$(MAKE) $(MAKESILENT) -f python/customModule/bindings/CMakeFiles/customModule_docstrings.dir/build.make python/customModule/bindings/CMakeFiles/customModule_docstrings.dir/build
+.PHONY : customModule_docstrings/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -237,9 +276,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... copy_module_for_tests"
+	@echo "... customModule_docstrings"
 	@echo "... pygen_apps_9a6dd283c3de653fbca500f9721f634f"
 	@echo "... pygen_python_customModule_9d171376c9833e414f87cfb10864384e"
 	@echo "... uninstall"
+	@echo "... customModule_python"
+	@echo "... gnuradio-customModule"
 .PHONY : help
 
 

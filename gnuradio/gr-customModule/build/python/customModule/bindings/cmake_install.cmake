@@ -42,3 +42,23 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "pythonapi" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule" TYPE MODULE FILES "/clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so"
+         OLD_RPATH "/clusterfs/sdr/gnuradio/gr-customModule/build/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.11/dist-packages/gnuradio/customModule/customModule_python.cpython-311-aarch64-linux-gnu.so")
+    endif()
+  endif()
+endif()
+

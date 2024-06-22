@@ -11,5 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/gnuradio/customModule
+    multDivSelect.h DESTINATION include/gnuradio/customModule
 )

@@ -51,7 +51,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '1'
+    const: '2'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: complex
@@ -103,20 +103,20 @@ blocks:
     coordinate: [728, 228.0]
     rotation: 0
     state: true
-- name: customModule_addSubSelect_0
-  id: customModule_addSubSelect
+- name: customModule_multDivSelect_0
+  id: customModule_multDivSelect
   parameters:
     affinity: ''
     alias: ''
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    selector: 'True'
+    selector: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [392, 216.0]
+    coordinate: [376, 160.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -218,10 +218,10 @@ blocks:
     state: true
 
 connections:
-- [analog_const_source_x_0, '0', customModule_addSubSelect_0, '1']
-- [analog_sig_source_x_0, '0', customModule_addSubSelect_0, '0']
+- [analog_const_source_x_0, '0', customModule_multDivSelect_0, '1']
+- [analog_sig_source_x_0, '0', customModule_multDivSelect_0, '0']
 - [blocks_throttle_0, '0', qtgui_time_sink_x_0, '0']
-- [customModule_addSubSelect_0, '0', blocks_throttle_0, '0']
+- [customModule_multDivSelect_0, '0', blocks_throttle_0, '0']
 
 metadata:
   file_format: 1

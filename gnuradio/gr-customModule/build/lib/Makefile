@@ -97,7 +97,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"pythonapi\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -171,6 +171,44 @@ depend:
 	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+lib/CMakeFiles/gnuradio-customModule.dir/rule:
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/gnuradio-customModule.dir/rule
+.PHONY : lib/CMakeFiles/gnuradio-customModule.dir/rule
+
+# Convenience name for target.
+gnuradio-customModule: lib/CMakeFiles/gnuradio-customModule.dir/rule
+.PHONY : gnuradio-customModule
+
+# fast build rule for target.
+gnuradio-customModule/fast:
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-customModule.dir/build.make lib/CMakeFiles/gnuradio-customModule.dir/build
+.PHONY : gnuradio-customModule/fast
+
+multDivSelect_impl.o: multDivSelect_impl.cc.o
+.PHONY : multDivSelect_impl.o
+
+# target to build an object file
+multDivSelect_impl.cc.o:
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-customModule.dir/build.make lib/CMakeFiles/gnuradio-customModule.dir/multDivSelect_impl.cc.o
+.PHONY : multDivSelect_impl.cc.o
+
+multDivSelect_impl.i: multDivSelect_impl.cc.i
+.PHONY : multDivSelect_impl.i
+
+# target to preprocess a source file
+multDivSelect_impl.cc.i:
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-customModule.dir/build.make lib/CMakeFiles/gnuradio-customModule.dir/multDivSelect_impl.cc.i
+.PHONY : multDivSelect_impl.cc.i
+
+multDivSelect_impl.s: multDivSelect_impl.cc.s
+.PHONY : multDivSelect_impl.s
+
+# target to generate assembly for a file
+multDivSelect_impl.cc.s:
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-customModule.dir/build.make lib/CMakeFiles/gnuradio-customModule.dir/multDivSelect_impl.cc.s
+.PHONY : multDivSelect_impl.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -184,6 +222,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... gnuradio-customModule"
+	@echo "... multDivSelect_impl.o"
+	@echo "... multDivSelect_impl.i"
+	@echo "... multDivSelect_impl.s"
 .PHONY : help
 
 
