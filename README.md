@@ -321,9 +321,9 @@ El mismo está formado por dos componentes llamados:
 
 En el gr companion se puede ver como
 
-![Imagen gr companion](./image1.png){width="6.1375in" height="3.588888888888889in"}
+![Imagen gr companion](./image1.png)
 
 El directorio de los fuentes respectivos es
 ~~~
-$CLUSTERFS/sdr/gnuradio/gr-customModule*
+$CLUSTERFS/sdr/gnuradio/gr-customModule
 ~~~
