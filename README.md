@@ -1,26 +1,37 @@
 # Instalar ZeroTier
 
--   Bajar e instalar cliente ZeroTier desde
-    *https://www.zerotier.com/download/*
+-   Bajar e instalar cliente ZeroTier desde el [sitio oficial ZeroTier](https://www.zerotier.com/download/)
 
--   Verificar instalación con *zerotier-cli Info*
+-   Verificar instalacionn con
+~~~
+zerotier-cli Info
+~~~
 
--   Solicitar acceso al cluster con *zerotier-cli join ebe7fbd44582a898*
+-   Solicitar acceso al cluster con 
+~~~
+zerotier-cli join ebe7fbd44582a898
+~~~
 
--   Verificar que es funcional con *ping 100.100.100.100*
-
+-   Verificar que es funcional con 
+~~~
+ping 100.100.100.100
+~~~
 -   Usar el nombre *sdr-s00* en el DNS local para 100.100.100.100
-    (master).
+    (master), para ello editar el archivo
+~~~
+sudo nano /etc/resolv.conf
+~~~
 
-# 
 
 # Directorio local para utilidades 
 
 Las utilidades del sistema pueden estar en cualquiera de los siguientes
 dos directorios:
 
+~~~
 -   /home/pi
 -   /clusterfs/sdr
+~~~
 
 Es preferible el segundo pues es un file System NFS compartido por todos
 los nodos, por lo que lo que allí se coloque será accesible desde todos
@@ -38,7 +49,7 @@ Raspbian queda el grueso del trabajo.
     comando
 
 ~~~
-		ssh-keygen
+ssh-keygen
 ~~~
 -   Al hacerlo quedarán los archivo *id_rsa.pub* e *id_rsa* en el
     directorio *./ssh*
@@ -48,14 +59,14 @@ Raspbian queda el grueso del trabajo.
 -   En la máquina local ejecutar
 
 ~~~
-		ssh-copy-id remote_username@remote_server_ip_address
+ssh-copy-id remote_username@remote_server_ip_address
 ~~~
 ## Entrar en la máquina remota
 
 -   En la máquina local ejecutar
 
 ~~~
-		ssh remote_username@remote_server_ip_address
+ssh remote_username@remote_server_ip_address
 ~~~
 
 # Creación de nuevo usuario 
@@ -66,30 +77,30 @@ Raspbian queda el grueso del trabajo.
 
 -   Generar una nueva password arbitraria con
 ~~~
-		python pwdgen.py
+python $SCRIPTS/pwdgen.py
 ~~~
 -   Tipear *
 ~~~
-		sudo adduser \[usuario\]
+sudo adduser \[usuario\]
 ~~~
 -   Indicar password y confirmar.
 
 ## Agregar a grupo sudoers
 
 ~~~
-		usermod -aG sudo \[usuario\]
+usermod -aG sudo \[usuario\]
 ~~~
 ## Para cambiar password
 
 -   Generar una nueva password arbitraria con 
 
 ~~~
-		python pwdgen.py
+python $SCRIPTS/pwdgen.py
 ~~~
 -   Tipear
 
 ~~~
-		sudo passwd \[usuario\]
+sudo passwd \[usuario\]
 ~~~
  tipear a continuacion la password  dos veces.
 
@@ -98,8 +109,8 @@ Raspbian queda el grueso del trabajo.
 Se accede con
 
 ~~~
-		ssh <pi@100.100.100.100>
-		password \[************] (sin los \[ \])
+ssh <pi@100.100.100.100>
+password \[************] (sin los \[ \])
 ~~~
 Esta forma de acceso no es recomendada, utilizar en la medida de lo
 posible la que se explica a continuación.
@@ -115,23 +126,22 @@ individual y el directorio de comienzo es en /home/\[usuario\], para
 corregirlo tipear:
 
 ~~~
-		sudo su pi
-		cd /home/pi*
+sudo su pi && cd /home/pi
 ~~~
 
 Se puede verificar cual es el usuario de operacion con el comando
 
 ~~~
-		whoami
+whoami
 ~~~
  y el directorio de operación con el comando 
 ~~~
-		pwd
+pwd
 ~~~
 
 Al finalizar se puede desconectar con 
 ~~~
-		exit
+exit
 ~~~
 # Utilidades de cluster
 
@@ -139,9 +149,9 @@ Al finalizar se puede desconectar con
 
 Los siguientes son variables exportadas
 
--   CLUSTERFS (contenido "/clusterfs/sdr")
--   CLUSTERIP (contenido "10.0.0.")
--   CLUSTERID (contenido "sdr-s0")
+-   $CLUSTERFS (contenido "/clusterfs/sdr")
+-   $CLUSTERIP (contenido "10.0.0.")
+-   $CLUSTERID (contenido "sdr-s0")
 
 La variable *HOSTFILE* contendra el nombre completo al archivo con la
 definicion corriente del cluster.
@@ -152,7 +162,7 @@ El script **ccp.sh** sirve para copiar un mismo archivo desde el nodo
 base del cluster a uno o todos los nodos del mismo.
 
 ~~~
-	$SCRIPTS/ccp.sh {-n nodo} {archivo_origen} {path}{archivo_destino}
+$SCRIPTS/ccp.sh {-n nodo} {archivo_origen} {path}{archivo_destino}
 ~~~
 El comando se ejecuta con autoridad de usuario pi por lo que el destino
 tiene que estar autorizado para realizar la operación de copia.
@@ -164,7 +174,7 @@ En caso de necesitar hacer copias individuales en sentido contrario
 puede utilizarse
 
 ~~~
-	scp pi@{nodo_origen}:/(path)/(archivo) archivo
+scp pi@{nodo_origen}:/(path)/(archivo) archivo
 ~~~
 
 ## Script cexec.sh
@@ -174,25 +184,32 @@ nodo base del cluster a uno o a todos los nodos del mismo.
 
 Para ejecutar un comando:
 
-> *\$SCRIPTS/cexec.sh {-n nodo} "comando1"*
+~~~
+$SCRIPTS/cexec.sh {-n nodo} "comando1"
+~~~
 
 Para ejecutar múltiples comandos
 
-*\$SCRIPTS/cexec.sh {-n nodo} "comando1 && comando2 ..... &&
-./comandoN"*
+~~~
+$SCRIPTS/cexec.sh {-n nodo} "comando1 && comando2 ..... && ./comandoN"
+~~~
 
 *Script cping.sh*
 
 El script **cping.sh** sirve para verificar el estado de todos los nodos
 indicados en el archivo /etc/hosts que respondan al patrón "sdr-s\*".
 
-> *\$SCRIPTS/cping.sh*
+~~~
+$SCRIPTS/cping.sh
+~~~
 
 ## Stress del sistema
 
 Se puede inducir un stress en cualquiera de los nodos con el comando
 
-> *\$SCRIPTS/cstress.sh*
+~~~
+$SCRIPTS/cstress.sh
+~~~
 
 el cual ocupará los 4 procesadores de un nodo por 900 segundos.
 
@@ -204,7 +221,9 @@ Los nodos deben tener sincronización de tiempo por el protocolo ntp. El
 mismo mantiene sincronizados los relojes con un patrón externo.
 
 Se puede forzar una sincronización en cualquier momento con el script
-*ntpd.sync.*
+~~~
+$SCRIPTS/ntpd.sync
+~~~
 
 # Benchmark del cluster
 
@@ -215,13 +234,12 @@ en *\$HOSTFILE*
 
 El formato del archivo es
 
-> sdr-s00 slots=4
->
-> sdr-s01 slots=4
->
-> sdr-s03 slots=4
->
-> sdr-s04 slots=2
+~~~
+sdr-s00 slots=4
+sdr-s01 slots=4
+sdr-s03 slots=4
+sdr-s04 slots=2
+~~~
 
 Donde se puede regular el número de núcleos disponibles en cada nodo,
 hay que tener en cuenta que en el nodo base (sdr-s00) siempre uno de los
@@ -233,49 +251,60 @@ menos veloces tengan menor asignación por parte del scheduler.
 No es realmente un benchmark sino un test del número de cores que están
 siendo vistos y utilizados por el entorno del cluster, se invoca con
 
-> */clusterfs/sdr/python/mpi4/mpi4.sh*
+~~~
+$CLUSTERFS/sdr/python/mpi4/mpi4.sh
+~~~
 
 ## hello_mpi (C++)
 
 No es realmente un benchmark sino un test del número de cores que están
 siendo vistos y utilizados por el entorno del cluster, se invoca con
 
-## 
-
-> */clusterfs/sdr/lib/hello_mpi/hello_mpi.sh*
+~~~
+clusterfs/sdr/lib/hello_mpi/hello_mpi.sh
+~~~
 
 Mostrandose todos los nodos que pueden subscribir trabajo de acuerdo a
-la configuración.
+la configuracion.
 
 ## primes (Python)
 
-Calcula los números primos en un intervalo, se invoca con
+Calcula los numeros primos en un intervalo, se invoca con
 
-> */clusterfs/sdr/python/primes/primes.sh*
+~~~
+$CLUSTERFS/sdr/python/primes/primes.sh
+~~~
 
 La comparación con el cálculo clásico en un solo nodo puede realizarse
 con
 
-*python /clusterfs/sdr/python/primes/primes_classic.py -l 1 -u 100000*
+~~~
+python $CLUSTERFS/sdr/python/primes/primes_classic.py -l 1 -u 100000
+~~~
 
 ## getpi (Python)
 
 Calcula el número pi con diferentes precisiones, se invoca con
 
-> */clusterfs/sdr/python/getpi/getpi.sh*
+~~~
+$CLUSTERFS/sdr/python/getpi/getpi.sh
+~~~
 
 La comparación con el cálculo clásico en un solo nodo puede realizarse
 con
 
-*python /clusterfs/sdr/python/getpit/getpi_classic.py -s 1000000*
+~~~
+python $CLUSTERFS/sdr/python/getpit/getpi_classic.py -s 1000000
+~~~
 
 ## collatz (C++)
 
 Calcula la profundidad de la conjetura de Collatz para un rango
 indicado, se invoca con:
 
-*/clusterfs/sdr/lib/collatz.sh* *\[-m MPI\|SERIAL\] \[-s Start\] \[-e
-End\] \[-b Blocksize\] \[-v\]*
+~~~
+$CLUSTERFS/sdr/lib/collatz.sh* *\[-m MPI\|SERIAL\] \[-s Start\] \[-e End\] \[-b Blocksize\] \[-v\]
+~~~
 
 El mismo script calcula con la versión paralelo (MPI) o serie (SERIAL).
 
@@ -289,15 +318,14 @@ Companion denominado *customModule*.
 
 El mismo está formado por dos componentes llamados:
 
--   *addSubSelect* (Python): suma el valor de trama 2 a trama 1 si True.
-
--   *multSubSelect* (C++): multiplica el valor de trama 2 por trama 1 si
-    True.
+-   *addSubSelect* (Python): suma el valor de trama 2 a trama 1 si *True*.
+-   *multSubSelect* (C++): multiplica el valor de trama 2 por trama 1 si *True*.
 
 En el gr companion se puede ver como
 
-![](./image1.png){width="6.1375in" height="3.588888888888889in"}
+![Imagen gr companion](image1.png){width="6.1375in" height="3.588888888888889in"}
 
 El directorio de los fuentes respectivos es
-*/clusterfs/sdr/gnuradio/gr-customModule*
-
+~~~
+$CLUSTERFS/sdr/gnuradio/gr-customModule*
+~~~
