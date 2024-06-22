@@ -1,5 +1,8 @@
-# *Cluster UADER-FCyT Proyecto I+D Procesamiento SDR en cluster distribuido"
-# Instalar ZeroTier
+# Cluster UADER-FCyT 
+# Proyecto I+D Procesamiento SDR en cluster distribuido
+
+# Infraestructura basica
+## Instalar ZeroTier
 
 -   Bajar e instalar cliente ZeroTier desde el [sitio oficial ZeroTier](https://www.zerotier.com/download/)
 
@@ -24,7 +27,7 @@ sudo nano /etc/resolv.conf
 ~~~
 
 
-# Directorio local para utilidades 
+## Directorio local para utilidades 
 
 Las utilidades del sistema pueden estar en cualquiera de los siguientes
 dos directorios:
@@ -41,10 +44,10 @@ lso nodos sin necesidad de copiar explícitamente.
 Por otra parte ante el fallo de la tarjeta microSD con la imagen
 Raspbian queda el grueso del trabajo.
 
-# Método para loggear en ssh sin password
+## Metodo para loggear en ssh sin password
 
 
-## Generar las claves públicas y privadas de cada usuario
+### Generar las claves públicas y privadas de cada usuario
 
 -   En la máquina local de cada uno generar las credenciales con el
     comando
@@ -55,14 +58,14 @@ ssh-keygen
 -   Al hacerlo quedarán los archivo *id_rsa.pub* e *id_rsa* en el
     directorio *./ssh*
 
-## Copiar la clave pública a la máquina remota
+### Copiar la clave pública a la máquina remota
 
 -   En la máquina local ejecutar
 
 ~~~
 ssh-copy-id remote_username@remote_server_ip_address
 ~~~
-## Entrar en la máquina remota
+### Entrar en la máquina remota
 
 -   En la máquina local ejecutar
 
@@ -70,9 +73,9 @@ ssh-copy-id remote_username@remote_server_ip_address
 ssh remote_username@remote_server_ip_address
 ~~~
 
-# Creación de nuevo usuario 
+## Creación de nuevo usuario 
 
-## Generar el usuario 
+### Generar el usuario 
 
 -   Seleccionar el usuario a generar, igual a usuario de correo electronico en UADER.
 
@@ -86,7 +89,7 @@ sudo adduser \[usuario\]
 ~~~
 -   Indicar password y confirmar.
 
-## Agregar a grupo sudoers
+### Agregar a grupo sudoers
 
 ~~~
 usermod -aG sudo \[usuario\]
@@ -105,7 +108,7 @@ sudo passwd \[usuario\]
 ~~~
  tipear a continuacion la password  dos veces.
 
-# Login con pi en cluster base (sdr-s00) desde el exterior
+## Login con pi en cluster base (sdr-s00) desde el exterior
 
 Se accede con
 
@@ -116,7 +119,7 @@ password \[************] (sin los \[ \])
 Esta forma de acceso no es recomendada, utilizar en la medida de lo
 posible la que se explica a continuación.
 
-# Procedimiento de login
+## Procedimiento de login
 
 Para que el trabajo pueda ser hecho en forma cooperativa todas las
 instalaciones deben ser hechas con el usuario pi en el directorio
@@ -144,9 +147,9 @@ Al finalizar se puede desconectar con
 ~~~
 exit
 ~~~
-# Utilidades de cluster
+## Utilidades de cluster
 
-## Directorios exportados
+### Directorios exportados
 
 Los siguientes son variables exportadas
 
@@ -157,7 +160,7 @@ Los siguientes son variables exportadas
 La variable *HOSTFILE* contendra el nombre completo al archivo con la
 definicion corriente del cluster.
  
-## Script ccp.sh
+### Script ccp.sh
 
 El script **ccp.sh** sirve para copiar un mismo archivo desde el nodo
 base del cluster a uno o todos los nodos del mismo.
@@ -178,7 +181,7 @@ puede utilizarse
 scp pi@{nodo_origen}:/(path)/(archivo) archivo
 ~~~
 
-## Script cexec.sh
+### Script cexec.sh
 
 El script **cexec.sh** sirve para ejecutar uno o mas comandos desde el
 nodo base del cluster a uno o a todos los nodos del mismo.
@@ -204,7 +207,7 @@ indicados en el archivo /etc/hosts que respondan al patrón "sdr-s\*".
 $SCRIPTS/cping.sh
 ~~~
 
-## Stress del sistema
+### Stress del sistema
 
 Se puede inducir un stress en cualquiera de los nodos con el comando
 
@@ -216,7 +219,7 @@ el cual ocupará los 4 procesadores de un nodo por 900 segundos.
 
 El mismo se puede ejecutar en forma distribuido con cexec.sh
 
-## Sincronización de tiempo
+### Sincronización de tiempo
 
 Los nodos deben tener sincronización de tiempo por el protocolo ntp. El
 mismo mantiene sincronizados los relojes con un patrón externo.
@@ -226,9 +229,9 @@ Se puede forzar una sincronización en cualquier momento con el script
 $SCRIPTS/ntpd.sync
 ~~~
 
-# Benchmark del cluster
+## Benchmark del cluster
 
-## Configuración del cluster OpenMPI
+### Configuración del cluster OpenMPI
 
 Los nodos habilitados para ser utilizados por el cluster se encuentran
 en *\$HOSTFILE*
@@ -247,7 +250,7 @@ hay que tener en cuenta que en el nodo base (sdr-s00) siempre uno de los
 núcleos se designa como rank 0 (master). Es conveniente que las placas
 menos veloces tengan menor asignación por parte del scheduler.
 
-## mpi4 (Python)
+### mpi4 (Python)
 
 No es realmente un benchmark sino un test del número de cores que están
 siendo vistos y utilizados por el entorno del cluster, se invoca con
@@ -256,7 +259,7 @@ siendo vistos y utilizados por el entorno del cluster, se invoca con
 $CLUSTERFS/sdr/python/mpi4/mpi4.sh
 ~~~
 
-## hello_mpi (C++)
+### hello_mpi (C++)
 
 No es realmente un benchmark sino un test del número de cores que están
 siendo vistos y utilizados por el entorno del cluster, se invoca con
@@ -268,7 +271,7 @@ clusterfs/sdr/lib/hello_mpi/hello_mpi.sh
 Mostrandose todos los nodos que pueden subscribir trabajo de acuerdo a
 la configuracion.
 
-## primes (Python)
+### primes (Python)
 
 Calcula los numeros primos en un intervalo, se invoca con
 
@@ -283,7 +286,7 @@ con
 python $CLUSTERFS/sdr/python/primes/primes_classic.py -l 1 -u 100000
 ~~~
 
-## getpi (Python)
+### getpi (Python)
 
 Calcula el número pi con diferentes precisiones, se invoca con
 
@@ -298,7 +301,7 @@ con
 python $CLUSTERFS/sdr/python/getpit/getpi_classic.py -s 1000000
 ~~~
 
-## collatz (C++)
+### collatz (C++)
 
 Calcula la profundidad de la conjetura de Collatz para un rango
 indicado, se invoca con:
@@ -310,7 +313,7 @@ $CLUSTERFS/sdr/lib/collatz.sh* *\[-m MPI\|SERIAL\] \[-s Start\] \[-e End\] \[-b 
 El mismo script calcula con la versión paralelo (MPI) o serie (SERIAL).
 
 
-# Benchmark de GNURadio
+## Benchmark de GNURadio
 
 Se dispone de un módulo custom (OOT) accesible desde el GNU Radio
 Companion denominado *customModule*.
