@@ -5,7 +5,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-
 install(FILES
-    customModule_addSubSelect.block.yml DESTINATION share/gnuradio/grc/blocks
+    customModule_addSubSelect.block.yml
+    DESTINATION share/gnuradio/grc/blocks
 )

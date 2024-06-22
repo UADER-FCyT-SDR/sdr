@@ -27,7 +27,6 @@ include(GrPybind)
 ########################################################################
 # Python Bindings
 ########################################################################
-
 list(APPEND customModule_python_files
     python_bindings.cc)
 

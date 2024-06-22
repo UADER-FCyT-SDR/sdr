@@ -10,9 +10,8 @@
 # Setup library
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
-
 list(APPEND customModule_sources
-)
+    )
 
 set(customModule_sources "${customModule_sources}" PARENT_SCOPE)
 if(NOT customModule_sources)
