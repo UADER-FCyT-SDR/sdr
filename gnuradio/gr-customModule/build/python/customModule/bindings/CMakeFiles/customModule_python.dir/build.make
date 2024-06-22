@@ -105,32 +105,32 @@ customModule_python_OBJECTS = \
 # External object files for target customModule_python
 customModule_python_EXTERNAL_OBJECTS =
 
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/multDivSelect_python.cc.o
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/python_bindings.cc.o
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/build.make
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_unit_test_framework.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: lib/libgnuradio-customModule.so.1.0.0.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libgnuradio-runtime.so.3.10.5.1
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_program_options.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libboost_atomic.so.1.74.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libgnuradio-pmt.so.3.10.5.1
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libvolk.so.2.5.2
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libspdlog.so.1.10.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libfmt.so.9.1.0
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libgmpxx.so
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: /usr/lib/aarch64-linux-gnu/libgmp.so
-python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/clusterfs/sdr/gnuradio/gr-customModule/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared module customModule_python.cpython-311-aarch64-linux-gnu.so"
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/multDivSelect_python.cc.o
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/python_bindings.cc.o
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/build.make
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_date_time.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_system.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_regex.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_unit_test_framework.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: lib/libgnuradio-customModule.so.1.0.0.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libgnuradio-runtime.so.3.10.5.1
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_program_options.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_thread.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libboost_atomic.so.1.74.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libgnuradio-pmt.so.3.10.5.1
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libvolk.so.2.5.2
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libspdlog.so.1.10.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libfmt.so.9.1.0
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libgmpxx.so
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: /usr/lib/arm-linux-gnueabihf/libgmp.so
+python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so: python/customModule/bindings/CMakeFiles/customModule_python.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/clusterfs/sdr/gnuradio/gr-customModule/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared module customModule_python.cpython-311-arm-linux-gnueabihf.so"
 	cd /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/customModule_python.dir/link.txt --verbose=$(VERBOSE)
-	cd /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings && /usr/bin/strip /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so
-	cd /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings && /usr/bin/cmake -E copy /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so /clusterfs/sdr/gnuradio/gr-customModule/build/test_modules/gnuradio/customModule/
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings && /usr/bin/strip /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so
+	cd /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings && /usr/bin/cmake -E copy /clusterfs/sdr/gnuradio/gr-customModule/build/python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so /clusterfs/sdr/gnuradio/gr-customModule/build/test_modules/gnuradio/customModule/
 
 # Rule to build all files generated by this target.
-python/customModule/bindings/CMakeFiles/customModule_python.dir/build: python/customModule/bindings/customModule_python.cpython-311-aarch64-linux-gnu.so
+python/customModule/bindings/CMakeFiles/customModule_python.dir/build: python/customModule/bindings/customModule_python.cpython-311-arm-linux-gnueabihf.so
 .PHONY : python/customModule/bindings/CMakeFiles/customModule_python.dir/build
 
 python/customModule/bindings/CMakeFiles/customModule_python.dir/clean:

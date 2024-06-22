@@ -14,23 +14,23 @@
 # EXTERNAL cache entries
 ########################
 
-Boost_DATE_TIME_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.74.0
+Boost_DATE_TIME_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_date_time.so.1.74.0
 
 //The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0
+Boost_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Boost-1.74.0
 
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
-Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_program_options.so.1.74.0
+Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_program_options.so.1.74.0
 
-Boost_REGEX_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_regex.so.1.74.0
+Boost_REGEX_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_regex.so.1.74.0
 
-Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_system.so.1.74.0
+Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_system.so.1.74.0
 
-Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_thread.so.1.74.0
+Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_thread.so.1.74.0
 
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:STRING=/usr/lib/aarch64-linux-gnu/libboost_unit_test_framework.so.1.74.0
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_unit_test_framework.so.1.74.0
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -250,16 +250,16 @@ ENABLE_TESTING:BOOL=ON
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //Path to a library.
-GMPXX_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libgmpxx.so
+GMPXX_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/libgmpxx.so
 
 //Path to a file.
 GMP_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-GMP_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libgmp.so
+GMP_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/libgmp.so
 
 //The directory containing a CMake configuration file for Gnuradio.
-Gnuradio_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/gnuradio
+Gnuradio_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/gnuradio
 
 //lib directory suffix
 LIB_SUFFIX:STRING=
@@ -284,7 +284,7 @@ PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
 PYTHON_INCLUDE_DIR:PATH=/usr/include/python3.11
 
 //Path to a library.
-PYTHON_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libpython3.11.so
+PYTHON_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/libpython3.11.so
 
 //Path to a library.
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
@@ -305,37 +305,37 @@ VOLK_INCLUDE_DIRS:STRING=/usr/include
 VOLK_LIBRARIES:STRING=Volk::volk
 
 //The directory containing a CMake configuration file for Volk.
-Volk_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/volk
+Volk_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/volk
 
 //The directory containing a CMake configuration file for boost_atomic.
-boost_atomic_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_atomic-1.74.0
+boost_atomic_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_atomic-1.74.0
 
 //The directory containing a CMake configuration file for boost_date_time.
-boost_date_time_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_date_time-1.74.0
+boost_date_time_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_date_time-1.74.0
 
 //The directory containing a CMake configuration file for boost_headers.
-boost_headers_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_headers-1.74.0
+boost_headers_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_headers-1.74.0
 
 //The directory containing a CMake configuration file for boost_program_options.
-boost_program_options_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_program_options-1.74.0
+boost_program_options_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_program_options-1.74.0
 
 //The directory containing a CMake configuration file for boost_regex.
-boost_regex_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_regex-1.74.0
+boost_regex_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_regex-1.74.0
 
 //The directory containing a CMake configuration file for boost_system.
-boost_system_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_system-1.74.0
+boost_system_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_system-1.74.0
 
 //The directory containing a CMake configuration file for boost_thread.
-boost_thread_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_thread-1.74.0
+boost_thread_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_thread-1.74.0
 
 //The directory containing a CMake configuration file for boost_unit_test_framework.
-boost_unit_test_framework_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/boost_unit_test_framework-1.74.0
+boost_unit_test_framework_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_unit_test_framework-1.74.0
 
 //Dependencies for the target
 customModule_python_LIB_DEPENDS:STATIC=general;Boost::date_time;general;Boost::program_options;general;Boost::system;general;Boost::regex;general;Boost::thread;general;Boost::unit_test_framework;general;gnuradio-customModule;
 
 //The directory containing a CMake configuration file for fmt.
-fmt_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/fmt
+fmt_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/fmt
 
 //Dependencies for the target
 gnuradio-customModule_LIB_DEPENDS:STATIC=general;gnuradio::gnuradio-runtime;
@@ -350,13 +350,13 @@ gr-customModule_IS_TOP_LEVEL:STATIC=ON
 gr-customModule_SOURCE_DIR:STATIC=/clusterfs/sdr/gnuradio/gr-customModule
 
 //Path to a library.
-pkgcfg_lib_PC_GMP_gmp:FILEPATH=/usr/lib/aarch64-linux-gnu/libgmp.so
+pkgcfg_lib_PC_GMP_gmp:FILEPATH=/usr/lib/arm-linux-gnueabihf/libgmp.so
 
 //The directory containing a CMake configuration file for pybind11.
 pybind11_DIR:PATH=/usr/lib/cmake/pybind11
 
 //The directory containing a CMake configuration file for spdlog.
-spdlog_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/spdlog
+spdlog_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/spdlog
 
 
 ########################
@@ -515,13 +515,13 @@ DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/aarch64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake][cfound components: date_time program_options system regex thread unit_test_framework ][v1.74.0(1.74.0)]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/arm-linux-gnueabihf/cmake/Boost-1.74.0/BoostConfig.cmake][cfound components: date_time program_options system regex thread unit_test_framework ][v1.74.0(1.74.0)]
 //Details about finding GMP
-FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/usr/lib/aarch64-linux-gnu/libgmpxx.so][/usr/lib/aarch64-linux-gnu/libgmp.so][/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/usr/lib/arm-linux-gnueabihf/libgmpxx.so][/usr/lib/arm-linux-gnueabihf/libgmp.so][/usr/include][v()]
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v()]
 //Details about finding MPLIB
-FIND_PACKAGE_MESSAGE_DETAILS_MPLIB:INTERNAL=[/usr/lib/aarch64-linux-gnu/libgmpxx.so][/usr/lib/aarch64-linux-gnu/libgmp.so][/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_MPLIB:INTERNAL=[/usr/lib/arm-linux-gnueabihf/libgmpxx.so][/usr/lib/arm-linux-gnueabihf/libgmp.so][/usr/include][v()]
 //Details about finding PYTHON
 FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/usr/bin/python33.11.2
 //Details about finding PkgConfig
@@ -529,7 +529,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.11.2(3.6)]
 //Details about finding PythonLibs
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/aarch64-linux-gnu/libpython3.11.so][/usr/include/python3.11][v3.11.2(3.11)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/arm-linux-gnueabihf/libpython3.11.so][/usr/include/python3.11][v3.11.2(3.11)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding Volk
@@ -558,11 +558,11 @@ PC_GMP_CFLAGS_OTHER:INTERNAL=
 PC_GMP_FOUND:INTERNAL=1
 PC_GMP_INCLUDEDIR:INTERNAL=/usr/include
 PC_GMP_INCLUDE_DIRS:INTERNAL=
-PC_GMP_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lgmp
+PC_GMP_LDFLAGS:INTERNAL=-L/usr/lib/arm-linux-gnueabihf;-lgmp
 PC_GMP_LDFLAGS_OTHER:INTERNAL=
-PC_GMP_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
+PC_GMP_LIBDIR:INTERNAL=/usr/lib/arm-linux-gnueabihf
 PC_GMP_LIBRARIES:INTERNAL=gmp
-PC_GMP_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu
+PC_GMP_LIBRARY_DIRS:INTERNAL=/usr/lib/arm-linux-gnueabihf
 PC_GMP_LIBS:INTERNAL=
 PC_GMP_LIBS_L:INTERNAL=
 PC_GMP_LIBS_OTHER:INTERNAL=
@@ -573,11 +573,11 @@ PC_GMP_STATIC_CFLAGS:INTERNAL=
 PC_GMP_STATIC_CFLAGS_I:INTERNAL=
 PC_GMP_STATIC_CFLAGS_OTHER:INTERNAL=
 PC_GMP_STATIC_INCLUDE_DIRS:INTERNAL=
-PC_GMP_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lgmp
+PC_GMP_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/arm-linux-gnueabihf;-lgmp
 PC_GMP_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_GMP_STATIC_LIBDIR:INTERNAL=
 PC_GMP_STATIC_LIBRARIES:INTERNAL=gmp
-PC_GMP_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu
+PC_GMP_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/arm-linux-gnueabihf
 PC_GMP_STATIC_LIBS:INTERNAL=
 PC_GMP_STATIC_LIBS_L:INTERNAL=
 PC_GMP_STATIC_LIBS_OTHER:INTERNAL=
@@ -597,12 +597,12 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 PYTHON_INCLUDE_DIRS:INTERNAL=/usr/include/python3.11
 PYTHON_IS_DEBUG:INTERNAL=0
-PYTHON_LIBRARIES:INTERNAL=/usr/lib/aarch64-linux-gnu/libpython3.11.so
+PYTHON_LIBRARIES:INTERNAL=/usr/lib/arm-linux-gnueabihf/libpython3.11.so
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
 PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-311-aarch64-linux-gnu.so
+PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-311-arm-linux-gnueabihf.so
 PYTHON_MODULE_PREFIX:INTERNAL=
 PYTHON_VERSION:INTERNAL=3.11.2
 PYTHON_VERSION_MAJOR:INTERNAL=3
@@ -637,7 +637,7 @@ boost_thread_DIR-ADVANCED:INTERNAL=1
 boost_unit_test_framework_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_GMP_gmp
 pkgcfg_lib_PC_GMP_gmp-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/lib/aarch64-linux-gnu
+prefix_result:INTERNAL=/usr/lib/arm-linux-gnueabihf
 //Directories where pybind11 and possibly Python headers are located
 pybind11_INCLUDE_DIRS:INTERNAL=/usr/include;/usr/include/python3.11
 

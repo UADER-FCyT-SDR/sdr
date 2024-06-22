@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: SDR-Custom Module Demo
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 12]
+    coordinate: [216, 12.0]
     rotation: 0
     state: enabled
 - name: analog_const_source_x_0
@@ -59,7 +59,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [152, 300.0]
+    coordinate: [72, 276.0]
     rotation: 0
     state: true
 - name: analog_sig_source_x_0
@@ -69,7 +69,7 @@ blocks:
     alias: ''
     amp: '1'
     comment: ''
-    freq: '100'
+    freq: '10'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
@@ -81,7 +81,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [112, 128.0]
+    coordinate: [32, 100.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -100,7 +100,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [728, 228.0]
+    coordinate: [616, 292.0]
     rotation: 0
     state: true
 - name: customModule_multDivSelect_0
@@ -116,7 +116,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 160.0]
+    coordinate: [296, 184.0]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -213,7 +213,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [888, 212.0]
+    coordinate: [776, 188.0]
     rotation: 0
     state: true
 

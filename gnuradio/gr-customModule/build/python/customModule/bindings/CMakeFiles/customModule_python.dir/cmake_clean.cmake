@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/customModule_python.dir/multDivSelect_python.cc.o.d"
   "CMakeFiles/customModule_python.dir/python_bindings.cc.o"
   "CMakeFiles/customModule_python.dir/python_bindings.cc.o.d"
-  "customModule_python.cpython-311-aarch64-linux-gnu.so"
+  "customModule_python.cpython-311-arm-linux-gnueabihf.so"
   "customModule_python.pdb"
 )
 

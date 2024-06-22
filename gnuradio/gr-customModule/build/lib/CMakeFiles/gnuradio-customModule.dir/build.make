@@ -92,15 +92,15 @@ gnuradio__customModule_EXTERNAL_OBJECTS =
 
 lib/libgnuradio-customModule.so.1.0.0.0: lib/CMakeFiles/gnuradio-customModule.dir/multDivSelect_impl.cc.o
 lib/libgnuradio-customModule.so.1.0.0.0: lib/CMakeFiles/gnuradio-customModule.dir/build.make
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libgnuradio-runtime.so.3.10.5.1
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libgnuradio-pmt.so.3.10.5.1
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libvolk.so.2.5.2
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.74.0
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libboost_atomic.so.1.74.0
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libspdlog.so.1.10.0
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libfmt.so.9.1.0
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libgmpxx.so
-lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/aarch64-linux-gnu/libgmp.so
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libgnuradio-runtime.so.3.10.5.1
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libgnuradio-pmt.so.3.10.5.1
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libvolk.so.2.5.2
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libboost_thread.so.1.74.0
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libboost_atomic.so.1.74.0
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libspdlog.so.1.10.0
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libfmt.so.9.1.0
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libgmpxx.so
+lib/libgnuradio-customModule.so.1.0.0.0: /usr/lib/arm-linux-gnueabihf/libgmp.so
 lib/libgnuradio-customModule.so.1.0.0.0: lib/CMakeFiles/gnuradio-customModule.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/clusterfs/sdr/gnuradio/gr-customModule/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libgnuradio-customModule.so"
 	cd /clusterfs/sdr/gnuradio/gr-customModule/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gnuradio-customModule.dir/link.txt --verbose=$(VERBOSE)
