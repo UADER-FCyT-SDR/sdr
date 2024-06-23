@@ -1,5 +1,5 @@
 #!/bin/sh
-
+NODE="sdr-q02"
 
 SCRIPT=$CLUSTERFS/"sdr/scripts"
 PYTHON=$CLUSTERFS/"sdr/python"
@@ -9,12 +9,12 @@ PYTHON=$CLUSTERFS/"sdr/python"
 #*---- Instalar OpenMPI y recursos de desarrollo
 
 cd $SCRIPT
-$SCRIPT/cexec.sh "sudo apt-get install gcc make git gdb  -y "
-$SCRIPT/cexec.sh "sudo apt-get update && sudo apt-get install openmpi-bin openmpi-common libopenmpi3 -y"
-$SCRIPT/cexec.sh "sudo apt-get install mpi-default-dev   -y "
+$SCRIPT/cexec.sh -n $NODE "sudo apt-get install gcc make git gdb  -y "
+$SCRIPT/cexec.sh -n $NODE "sudo apt-get update && sudo apt-get install openmpi-bin openmpi-common libopenmpi3 -y"
+$SCRIPT/cexec.sh -n $NODE "sudo apt-get install mpi-default-dev   -y "
 
 #*--- Instalar ambiente mpi4py
-$SCRIPT/cexec.sh "sudo apt-get install python3-mpi4py -y"
+$SCRIPT/cexec.sh -n $NODE "sudo apt-get install python3-mpi4py -y"
 
 #*--- Copiar recursos de soporte mpi4py
 cd $PYTHON
@@ -26,5 +26,4 @@ echo "*            ATENCION                 *"
 echo "***************************************"
 echo " "
 echo "Verificar y configurar el nodo"
-echo "agregar al archivo hostfile"
 

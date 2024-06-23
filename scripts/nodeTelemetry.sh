@@ -10,9 +10,11 @@
 #*-------------------------------------------------------------------------
 getCPU () {
 
-sar 1 3 | grep "Average:" | while read a ; do
+CPU=$(sar 1 3 | grep "Average:" | while read a ; do
  echo $a | awk '{print $3 + $4 + $5 + $6 + $7}';
-done
+done)
+echo $CPU
+
 }
 #+-----------------------------------------------------------------------------
 #* Get telemetry from all major sub-systems
@@ -79,8 +81,14 @@ echo "$DOWN-$HOST"
 #* Gather telemetry and assemble an information frame with it, log at Syslog
 #*--------------------------------------------------------------------------
 
-STATE="T($(getTemp)°C) V($(getVolt)V) Clk($(getClock)MHz) St($(getStatus)) CPU($(getCPU)%) DASD($(getDASD)%) LINK($(getLink))" 
-echo $STATE | logger -i -t "TLM"
-echo $STATE 
+echo "CPU($getCPU)"
+
+sar 1 3 | grep "Average:" | while read a ; do
+ echo $a | awk '{print $3 + $4 + $5 + $6 + $7}';
+done
+
+#STATE="T($(getTemp)°C) V($(getVolt)V) Clk($(getClock)MHz) St($(getStatus)) CPU($(getCPU)%) DASD($(getDASD)%) LINK($(getLink))" 
+#echo $STATE | logger -i -t "TLM"
+#echo $STATE 
 
 

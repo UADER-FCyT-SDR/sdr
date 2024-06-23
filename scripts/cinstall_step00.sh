@@ -9,10 +9,18 @@
 #* CLUSTERIP="10.0.0."
 #* CLUSTERID="sdr-s0"
 #*
+#* Ensure the target node has the correct time already
+#* 
+#* sudo date -s "dd MMM yy HH:MM:SS"
+#*
+#* Ensure the credentials of the base node has been set
+#* already into the target node
+#*
+#* ssh-copy-id pi@(target_host)
 #*----------------------------------------------------------------------------
 
 #* VVVVVVVVVVV---- Configurar aqui el nombre dele nodo 
-NODE="sdr-s04"
+NODE="sdr-q02"
 
 
 #*---- Comienza la ejecución
@@ -44,7 +52,7 @@ $SCRIPT/cexec.sh -n $NODE "sudo chmod -R 777 /clusterfs"
 
 
 #*---- Install speedtest
-$SCRIPTS/cexec.sh -n $NODE  "cd /home/pi && git clone https://github.com/sivel/speedtest-cli.git && cd speedtest-cli && python setup.py install"
+$SCRIPTS/cexec.sh -n $NODE  "cd /home/pi && git clone https://github.com/sivel/speedtest-cli.git && cd speedtest-cli && sudo python setup.py install"
 echo "**********************************"
 echo "*          ATENCION              *"
 echo "**********************************"

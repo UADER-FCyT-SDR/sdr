@@ -14,7 +14,8 @@
 #*
 #*          (en caso de mas de un comando separarlo con && )
 #*------------------------------------------------------------------------------------------------
-clear
+echo " "
+echo " "
 
 CURR=$(pwd)
 PWD=$(dirname $0)

@@ -8,4 +8,5 @@
 #  Microcluster LAN
 #  Script para verificar los nodos utilizados por el cluster
 #*------------------------------------------------------------------------------------------------
-mpirun --hostfile $HOSTFILE --oversubscribe python ./mpi4.py
+
+mpirun --hostfile $HOSTFILE --oversubscribe python /clusterfs/sdr/python/mpi4/mpi4.py
