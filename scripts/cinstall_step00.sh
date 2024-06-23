@@ -42,6 +42,9 @@ $SCRIPT/cexec.sh -n $NODE "sudo apt-get install nfs-common -y"
 $SCRIPT/cexec.sh -n $NODE "sudo mkdir /clusterfs"
 $SCRIPT/cexec.sh -n $NODE "sudo chmod -R 777 /clusterfs"
 
+
+#*---- Install speedtest
+$SCRIPTS/cexec.sh -n $NODE  "cd /home/pi && git clone https://github.com/sivel/speedtest-cli.git && cd speedtest-cli && python setup.py install"
 echo "**********************************"
 echo "*          ATENCION              *"
 echo "**********************************"
